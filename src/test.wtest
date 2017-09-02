@@ -19,8 +19,8 @@ test "springfield esta al horno si necesita 30"{
 	assert.that(springfield.estaEnElHorno())
 }
 test "las Centrales mas productivas de la region son la de carbon e hidroelectrica"{
-	assert.that(region.centralesGrosas()==[centralDeCarbon,centralHidroelectrica]||
-				region.centralesGrosas()==[centralHidroelectrica,centralDeCarbon]
-	)
+	assert.that(region.centralesGrosas()==[centralDeCarbon,centralHidroelectrica])
+		//region.centralesGrosas()==[centralHidroelectrica,centralDeCarbon]
+		//region.centralesGrosas()==[centralDeCarbon,centralHidroelectrica]
 }
 //ahora queda mas prolijo por ser solo una lista de 2 elementos, pero igual sigue sin ser una coleccion

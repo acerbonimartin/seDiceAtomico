@@ -160,41 +160,10 @@ object centralHidroelectrica{
 
 object region {
 	var ciudades= #{albuquerque,springfield}
-	var coleccion= #{1,2,3,4}
-	var coleccion3= #{a,b,c}
-	
-	method forEach1(){
-		ciudades.forEach{ciudad=>ciudad.centralQueMasProduce()}
-		return ciudades
-	}
-	method forEach2(){
-		coleccion.forEach{nro=>nro+1}
-		return coleccion
-	}
-	method forEach3() {
-		coleccion3 =coleccion3.forEach{letra=> letra.numero()}
-		return coleccion3
-	}
-	
+
 	method centralesGrosas(){
 		var centrales = #{}
 		centrales =ciudades.map{ciudad=>ciudad.centralQueMasProduce()}
 		return centrales	
-	}
-}
-object a{
-	method numero(){
-		return 1
-	}
-}
-
-object b {
-	method numero(){
-		return 2
-	}
-}
-object c {
-	method numero(){
-		return 3
 	}
 }
