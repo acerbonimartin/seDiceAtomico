@@ -6,6 +6,9 @@ object springfield{
 	var riquezaSuelo=0.9
 	var velocidadViento=10
 	
+	method necesidadEnergetica(cantidad){
+			necesidadEnergetica=cantidad
+	}
 	method velocidadViento(){
 		return velocidadViento
 	}
@@ -41,7 +44,7 @@ object springfield{
 		return centrales.map{central=>central.produce()}
 	}
 	method cubreNecesidades(){
-		return self.energiaDeCentrales()>=necesidadEnergetica
+		return (self.energiaDeCentrales()).sum() >=necesidadEnergetica
 	}
 }
 
@@ -102,6 +105,9 @@ object albuquerque {
 	var velocidadViento=10
 	var caudalDeRio=150
 	
+	method necesidadEnergetica(cantidad){
+		necesidadEnergetica=cantidad
+	}
 	method caudalDeRio(){
 		return caudalDeRio
 	}
@@ -156,9 +162,7 @@ object region {
 	var ciudades= #{albuquerque,springfield}
 	
 	method centralesGrosas(){
-		return ciudades.map{ciudad=>ciudad.centralQueMasProduce()}
-		
+		return ciudades.map{ciudad=>ciudad.centralQueMasProduce()}	
 	}
-	
-	
 }
+

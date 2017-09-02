@@ -1,0 +1,26 @@
+import plantas.*
+test "centralAtomicaProduce1" {
+
+	assert.that(centralAtomica.produce()==1)
+
+}
+test "central de carbon produce 18.5"{
+	assert.that(centralDeCarbon.produce()==18.5)
+}
+
+test "central eolica Produce 2"{
+	assert.that(centralEolica.produce()==2)
+}
+test "springfield cubre necesidad energética si esta es de 20"{
+	assert.that(springfield.cubreNecesidades())
+}
+test "springfield esta al horno si necesita 30"{
+	springfield.necesidadEnergetica(30)
+	assert.that(springfield.estaEnElHorno())
+}
+test "las Centrales mas productivas de la region son la de carbon e hidroelectrica"{
+	assert.that(region.centralesGrosas()==[#{centralDeCarbon},#{centralHidroelectrica}]||
+				region.centralesGrosas()==[#{centralHidroelectrica},#{centralDeCarbon}]
+	)
+}
+
