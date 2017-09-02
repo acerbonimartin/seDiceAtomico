@@ -159,7 +159,7 @@ object centralHidroelectrica{
 }
 
 object region {
-	var ciudades= #{}
+	var ciudades= #{albuquerque,springfield}
 	var coleccion= #{1,2,3,4}
 	var coleccion3= #{a,b,c}
 	
