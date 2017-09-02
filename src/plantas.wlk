@@ -15,9 +15,11 @@ object springfield{
 	}
 	method contaminan(){
 		contaminan= centrales.filter{central=>central.contamina()}
+		return contaminan
 	}
 	method noContaminan(){
 		noContaminan = centrales.filter{central=>!(central.contamina())}
+		return noContaminan
 	}
 	
 	method estaEnElHorno(){
@@ -92,7 +94,7 @@ object turbina1{
 
 
 object albuquerque {
-var centrales=#{centralHidroelectrica}
+	var centrales=#{centralHidroelectrica}
 	var contaminan =#{}
 	var noContaminan =#{}
 	var necesidadEnergetica=20
@@ -148,4 +150,15 @@ object centralHidroelectrica{
 	method produce(){
 		return ciudad.caudalDeRio()*2	
 	}
+}
+
+object region {
+	var ciudades= #{albuquerque,springfield}
+	
+	method centralesGrosas(){
+		return ciudades.map{ciudad=>ciudad.centralQueMasProduce()}
+		
+	}
+	
+	
 }
