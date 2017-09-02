@@ -38,7 +38,7 @@ object springfield{
 		return (self.energiaDeCentrales()).max()
 	}
 	method centralQueMasProduce(){
-		return  centrales.filter{central=>central.produce()==self.energiaMayor()}
+		return  (centrales.filter{central=>central.produce()==self.energiaMayor()}).find{true}
 	}
 	method energiaDeCentrales(){
 		return centrales.map{central=>central.produce()}
@@ -139,7 +139,7 @@ object albuquerque {
 		return (self.energiaDeCentrales()).max()
 	}
 	method centralQueMasProduce(){
-		return  centrales.filter{central=>central.produce()==self.energiaMayor()}
+		return  (centrales.filter{central=>central.produce()==self.energiaMayor()}).find{true}
 	}
 	method energiaDeCentrales(){
 		return centrales.map{central=>central.produce()}
@@ -162,7 +162,9 @@ object region {
 	var ciudades= #{albuquerque,springfield}
 	
 	method centralesGrosas(){
-		return ciudades.map{ciudad=>ciudad.centralQueMasProduce()}	
+		var centrales = #{}
+		centrales =ciudades.map{ciudad=>ciudad.centralQueMasProduce()}
+		return centrales	
 	}
 }
 
